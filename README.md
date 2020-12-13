@@ -22,5 +22,5 @@ The corresponding project on Github is [here](https://github.com/cs230-stanford/
 ## Creating dataset
 
 - Create dataset `python src/build_kaggle_dataset.py`  
-- Create vocab `python build_vocab.py --data_dir data/`
+- Create vocab `python src/build_vocab.py --data_dir data/`
 
