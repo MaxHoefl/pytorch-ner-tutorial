@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#pip install pipenv
-#pipenv install
+pip install pipenv
+pipenv install
 
 mkdir -p data/
 echo "Enter kaggle API credentials: "
