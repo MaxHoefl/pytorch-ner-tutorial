@@ -5,6 +5,8 @@ Training the NER model
 import torch
 import torch.optim as optim
 from tqdm import trange
+import logging as log
+
 
 
 def train(model, optimizer, loss_fn, data_iterator, metrics, params, num_steps):
@@ -28,4 +30,13 @@ def train(model, optimizer, loss_fn, data_iterator, metrics, params, num_steps):
    
 
 if __name__ == '__main__':
+    log.info("Loading the datasets...")
+    # load data
     data_loader = DataLoader(data_dir)
+    data = data_loader.load_data(['train', 'val'], '/data')
+    train_data = data['train']
+    val_data = data['val']
+    log.info("- done")
+
+
+
