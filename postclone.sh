@@ -6,12 +6,10 @@ repodir=$(pwd)
 function install_vim {
     mkdir -p ~/tmp/
     cd ~/tmp/
-    if [ -d vimrc/ ]; then
-        sudo cp -r vimrc vimrc_bkup
-        rm -rf vimrc
+    if [ ! -d vimrc/ ]; then
         git clone https://github.com/MaxHoefl/vimrc.git
-        cd vimrc/
     fi
+    cd vimrc/
     ./install.sh
     cd $repodir
 }
@@ -42,3 +40,6 @@ function process_dataset {
 }
 
 install_vim
+setup_pipenv
+download_dataset
+process_dataset
